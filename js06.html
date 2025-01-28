@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ตัวอย่าง Event Listeners</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Event Listeners</h3>
+    <div id="box"></div>
+    <p id="coordinates"></p>
+
+    <script>
+        // เลือก element ที่มี id เป็น "box" และเพิ่ม event listener สำหรับเหตุการณ์ mousemove
+        let box = document.getElementById("box");
+        box.addEventListener("mousemove", function(event) {
+            let coords = document.getElementById("coordinates");
+            coords.textContent = "พิกัดเมาส์: X=" + event.clientX + ", Y=" + event.clientY;
+        });
+
+        // เพิ่ม event listener สำหรับเหตุการณ์ click
+        box.addEventListener("click", function() {
+            this.style.backgroundColor = this.style.backgroundColor === "red" ? "blue" : "red";
+        });
+    </script>
+</body>
+</html>
